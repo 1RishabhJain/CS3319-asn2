@@ -1,0 +1,597 @@
+Warning: Using a password on the command line interface can be insecure.
+--------------
+SELECT * FROM passengers
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+SELECT * FROM passports
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+SELECT * FROM bustrips
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+SELECT * FROM buses
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+LOAD DATA LOCAL INFILE '/home/centos/rjain57/assignment2/loaddatafall2021.txt' INTO TABLE buses FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n'
+--------------
+
+Query OK, 8 rows affected (0.01 sec)
+Records: 8  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+SELECT * FROM buses
+--------------
+
++-----------------+----------+
+| licenseplatenum | capacity |
++-----------------+----------+
+| CAND123         |       50 |
+| TAXI111         |        4 |
+| TAXI222         |        3 |
+| TAXI333         |        4 |
+| UWO1122         |       70 |
+| UWO3311         |       62 |
+| VAN1111         |       10 |
+| VAN2222         |       15 |
++-----------------+----------+
+8 rows in set (0.00 sec)
+
+--------------
+INSERT INTO passengers VALUES ("11", "Homer", "Simpson")
+--------------
+
+Query OK, 1 row affected (0.03 sec)
+
+--------------
+INSERT INTO passengers VALUES ("22", "Marge", "Simpson")
+--------------
+
+Query OK, 1 row affected (0.11 sec)
+
+--------------
+INSERT INTO passengers VALUES ("33", "Bart", "Simpson")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passengers VALUES ("34", "Lisa", "Simpson")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passengers VALUES ("35", "Maggie", "Simpson")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passengers VALUES ("44", "Ned", "Flanders")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passengers VALUES ("45", "Todd", "Flanders")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO passengers VALUES ("66", "Heidi", "Klum")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passengers VALUES ("77", "Michael", "Scott")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passengers VALUES ("78", "Dwight", "Schrute")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passengers VALUES ("79", "Pam", "Beesly")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO passengers VALUES ("80", "Creed", "Bratton")
+--------------
+
+Query OK, 1 row affected (0.08 sec)
+
+--------------
+INSERT INTO passengers VALUES ("99", "Jake", "Peralta")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+SELECT * FROM passengers
+--------------
+
++-------------+-----------+----------+
+| passengerid | firstname | lastname |
++-------------+-----------+----------+
+|          11 | Homer     | Simpson  |
+|          22 | Marge     | Simpson  |
+|          33 | Bart      | Simpson  |
+|          34 | Lisa      | Simpson  |
+|          35 | Maggie    | Simpson  |
+|          44 | Ned       | Flanders |
+|          45 | Todd      | Flanders |
+|          66 | Heidi     | Klum     |
+|          77 | Michael   | Scott    |
+|          78 | Dwight    | Schrute  |
+|          79 | Pam       | Beesly   |
+|          80 | Creed     | Bratton  |
+|          99 | Jake      | Peralta  |
++-------------+-----------+----------+
+13 rows in set (0.00 sec)
+
+--------------
+INSERT INTO passports VALUES("US10", "USA", "2025/01/01", "1970/02/19", "11")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passports VALUES("US12", "USA", "2025/01/01", "1972/08/12", "22")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passports VALUES("US13", "USA", "2025/01/01", "2001/05/12", "33")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO passports VALUES("US14", "USA", "2025/01/01", "2004/03/19", "34")
+--------------
+
+Query OK, 1 row affected (0.03 sec)
+
+--------------
+INSERT INTO passports VALUES("US15", "USA", "2025/01/01", "2012/09/17", "35")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO passports VALUES("US22", "USA", "2030/04/04", "1950/06/11", "44")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passports VALUES("US23", "USA", "2018/03/03", "1940/06/24", "45")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passports VALUES("GE11", "Germany", "2027/01/01", "1970/07/12", "66")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO passports VALUES("US88", "Canada", "2030/02/13", "1979/04/25", "77")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passports VALUES("US89", "Canada", "2022/02/02", "1976/04/08", "78")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passports VALUES("US90", "Italy", "2020/02/28", "1980/04/04", "79")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO passports VALUES("US91", "Germany", "2030/01/01", "1959/02/02", "80")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO passports VALUES("US99", "USA", "2032/10/18", "1978/09/18", "99")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+SELECT * FROM passports
+--------------
+
++----------------+----------------------+------------+------------+-------------+
+| passportnumber | countryofcitizenship | expirydate | birthdate  | passengerid |
++----------------+----------------------+------------+------------+-------------+
+| GE11           | Germany              | 2027-01-01 | 1970-07-12 |          66 |
+| US10           | USA                  | 2025-01-01 | 1970-02-19 |          11 |
+| US12           | USA                  | 2025-01-01 | 1972-08-12 |          22 |
+| US13           | USA                  | 2025-01-01 | 2001-05-12 |          33 |
+| US14           | USA                  | 2025-01-01 | 2004-03-19 |          34 |
+| US15           | USA                  | 2025-01-01 | 2012-09-17 |          35 |
+| US22           | USA                  | 2030-04-04 | 1950-06-11 |          44 |
+| US23           | USA                  | 2018-03-03 | 1940-06-24 |          45 |
+| US88           | Canada               | 2030-02-13 | 1979-04-25 |          77 |
+| US89           | Canada               | 2022-02-02 | 1976-04-08 |          78 |
+| US90           | Italy                | 2020-02-28 | 1980-04-04 |          79 |
+| US91           | Germany              | 2030-01-01 | 1959-02-02 |          80 |
+| US99           | USA                  | 2032-10-18 | 1978-09-18 |          99 |
++----------------+----------------------+------------+------------+-------------+
+13 rows in set (0.00 sec)
+
+--------------
+INSERT INTO bustrips VALUES("1", "Castles of Germany", "2022/1/1", "2022/1/17", "Germany", "VAN1111")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bustrips VALUES("2", "Tuscany Sunsets", "2022/3/3", "2022/3/14", "Italy", "TAXI222")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bustrips VALUES("3", "California Wines", "2022/5/5", "2022/5/10", "USA", "VAN2222")
+--------------
+
+Query OK, 1 row affected (0.02 sec)
+
+--------------
+INSERT INTO bustrips VALUES("4", "Beaches Galore", "2022/4/4", "2022/4/14", "Bermuda", "TAXI222")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO bustrips VALUES("5", "Cottage Country", "2022/6/1", "2022/6/22", "Canada", "CAND123")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bustrips VALUES("6", "Arrivaderci Roma", "2022/7/5", "2022/7/15", "Italy", "TAXI111")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bustrips VALUES("7", "Shetland and Orkney", "2022/9/9", "2022/9/29", "UK", "TAXI111")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bustrips VALUES("8", "Disney World and Sea World", "2022/6/10", "2022/6/20", "USA", "VAN2222")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bustrips VALUES("9", "Punta Cana", "2022/5/1", "2022/5/15", "Dominican Republic", "VAN2222")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO bustrips VALUES("10", "Middlesex College Room 110", "2021/09/13", "2022/12/12", "Canada", "VAN2222")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+SELECT * FROM bustrips
+--------------
+
++--------+----------------------------+------------+------------+--------------------+-----------------+
+| tripid | tripname                   | startdate  | enddate    | country            | licenseplatenum |
++--------+----------------------------+------------+------------+--------------------+-----------------+
+|      1 | Castles of Germany         | 2022-01-01 | 2022-01-17 | Germany            | VAN1111         |
+|      2 | Tuscany Sunsets            | 2022-03-03 | 2022-03-14 | Italy              | TAXI222         |
+|      3 | California Wines           | 2022-05-05 | 2022-05-10 | USA                | VAN2222         |
+|      4 | Beaches Galore             | 2022-04-04 | 2022-04-14 | Bermuda            | TAXI222         |
+|      5 | Cottage Country            | 2022-06-01 | 2022-06-22 | Canada             | CAND123         |
+|      6 | Arrivaderci Roma           | 2022-07-05 | 2022-07-15 | Italy              | TAXI111         |
+|      7 | Shetland and Orkney        | 2022-09-09 | 2022-09-29 | UK                 | TAXI111         |
+|      8 | Disney World and Sea World | 2022-06-10 | 2022-06-20 | USA                | VAN2222         |
+|      9 | Punta Cana                 | 2022-05-01 | 2022-05-15 | Dominican Republic | VAN2222         |
+|     10 | Middlesex College Room 110 | 2021-09-13 | 2022-12-12 | Canada             | VAN2222         |
++--------+----------------------------+------------+------------+--------------------+-----------------+
+10 rows in set (0.00 sec)
+
+--------------
+INSERT INTO bookings VALUES("500", "1", "11")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("500", "1", "22")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("200", "1", "33")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO bookings VALUES("200", "1", "34")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("200", "1", "35")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("600.99", "1", "66")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("400", "8", "44")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO bookings VALUES("200", "8", "45")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("600", "4", "78")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("600", "4", "80")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO bookings VALUES("550", "1", "78")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("300", "8", "33")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("300", "8", "34")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("600", "6", "11")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO bookings VALUES("600", "6", "22")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("100", "6", "33")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("100", "6", "34")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("100", "6", "35")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO bookings VALUES("300", "7", "11")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("400", "7", "44")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO bookings VALUES("500", "7", "77")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO bookings VALUES("7306.60", "10", "99")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+SELECT * FROM bookings
+--------------
+
++-----------+--------+-------------+
+| tripprice | tripid | passengerid |
++-----------+--------+-------------+
+|    500.00 |      1 |          11 |
+|    500.00 |      1 |          22 |
+|    200.00 |      1 |          33 |
+|    200.00 |      1 |          34 |
+|    200.00 |      1 |          35 |
+|    600.99 |      1 |          66 |
+|    400.00 |      8 |          44 |
+|    200.00 |      8 |          45 |
+|    600.00 |      4 |          78 |
+|    600.00 |      4 |          80 |
+|    550.00 |      1 |          78 |
+|    300.00 |      8 |          33 |
+|    300.00 |      8 |          34 |
+|    600.00 |      6 |          11 |
+|    600.00 |      6 |          22 |
+|    100.00 |      6 |          33 |
+|    100.00 |      6 |          34 |
+|    100.00 |      6 |          35 |
+|    300.00 |      7 |          11 |
+|    400.00 |      7 |          44 |
+|    500.00 |      7 |          77 |
+|   7306.60 |     10 |          99 |
++-----------+--------+-------------+
+22 rows in set (0.00 sec)
+
+--------------
+SELECT * FROM passports, passengers WHERE passengers.passengerid = passports.passengerid
+--------------
+
++----------------+----------------------+------------+------------+-------------+-------------+-----------+----------+
+| passportnumber | countryofcitizenship | expirydate | birthdate  | passengerid | passengerid | firstname | lastname |
++----------------+----------------------+------------+------------+-------------+-------------+-----------+----------+
+| GE11           | Germany              | 2027-01-01 | 1970-07-12 |          66 |          66 | Heidi     | Klum     |
+| US10           | USA                  | 2025-01-01 | 1970-02-19 |          11 |          11 | Homer     | Simpson  |
+| US12           | USA                  | 2025-01-01 | 1972-08-12 |          22 |          22 | Marge     | Simpson  |
+| US13           | USA                  | 2025-01-01 | 2001-05-12 |          33 |          33 | Bart      | Simpson  |
+| US14           | USA                  | 2025-01-01 | 2004-03-19 |          34 |          34 | Lisa      | Simpson  |
+| US15           | USA                  | 2025-01-01 | 2012-09-17 |          35 |          35 | Maggie    | Simpson  |
+| US22           | USA                  | 2030-04-04 | 1950-06-11 |          44 |          44 | Ned       | Flanders |
+| US23           | USA                  | 2018-03-03 | 1940-06-24 |          45 |          45 | Todd      | Flanders |
+| US88           | Canada               | 2030-02-13 | 1979-04-25 |          77 |          77 | Michael   | Scott    |
+| US89           | Canada               | 2022-02-02 | 1976-04-08 |          78 |          78 | Dwight    | Schrute  |
+| US90           | Italy                | 2020-02-28 | 1980-04-04 |          79 |          79 | Pam       | Beesly   |
+| US91           | Germany              | 2030-01-01 | 1959-02-02 |          80 |          80 | Creed     | Bratton  |
+| US99           | USA                  | 2032-10-18 | 1978-09-18 |          99 |          99 | Jake      | Peralta  |
++----------------+----------------------+------------+------------+-------------+-------------+-----------+----------+
+13 rows in set (0.00 sec)
+
+--------------
+UPDATE passports JOIN passengers ON passports.passengerid = passengers.passengerid SET passports.countryofcitizenship = "Germany" WHERE passengers.firstname = "Dwight" AND passengers.lastname = "Schrute"
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+SELECT * FROM passports, passengers WHERE passengers.passengerid = passports.passengerid
+--------------
+
++----------------+----------------------+------------+------------+-------------+-------------+-----------+----------+
+| passportnumber | countryofcitizenship | expirydate | birthdate  | passengerid | passengerid | firstname | lastname |
++----------------+----------------------+------------+------------+-------------+-------------+-----------+----------+
+| GE11           | Germany              | 2027-01-01 | 1970-07-12 |          66 |          66 | Heidi     | Klum     |
+| US10           | USA                  | 2025-01-01 | 1970-02-19 |          11 |          11 | Homer     | Simpson  |
+| US12           | USA                  | 2025-01-01 | 1972-08-12 |          22 |          22 | Marge     | Simpson  |
+| US13           | USA                  | 2025-01-01 | 2001-05-12 |          33 |          33 | Bart      | Simpson  |
+| US14           | USA                  | 2025-01-01 | 2004-03-19 |          34 |          34 | Lisa      | Simpson  |
+| US15           | USA                  | 2025-01-01 | 2012-09-17 |          35 |          35 | Maggie    | Simpson  |
+| US22           | USA                  | 2030-04-04 | 1950-06-11 |          44 |          44 | Ned       | Flanders |
+| US23           | USA                  | 2018-03-03 | 1940-06-24 |          45 |          45 | Todd      | Flanders |
+| US88           | Canada               | 2030-02-13 | 1979-04-25 |          77 |          77 | Michael   | Scott    |
+| US89           | Germany              | 2022-02-02 | 1976-04-08 |          78 |          78 | Dwight    | Schrute  |
+| US90           | Italy                | 2020-02-28 | 1980-04-04 |          79 |          79 | Pam       | Beesly   |
+| US91           | Germany              | 2030-01-01 | 1959-02-02 |          80 |          80 | Creed     | Bratton  |
+| US99           | USA                  | 2032-10-18 | 1978-09-18 |          99 |          99 | Jake      | Peralta  |
++----------------+----------------------+------------+------------+-------------+-------------+-----------+----------+
+13 rows in set (0.00 sec)
+
+--------------
+SELECT * FROM bustrips
+--------------
+
++--------+----------------------------+------------+------------+--------------------+-----------------+
+| tripid | tripname                   | startdate  | enddate    | country            | licenseplatenum |
++--------+----------------------------+------------+------------+--------------------+-----------------+
+|      1 | Castles of Germany         | 2022-01-01 | 2022-01-17 | Germany            | VAN1111         |
+|      2 | Tuscany Sunsets            | 2022-03-03 | 2022-03-14 | Italy              | TAXI222         |
+|      3 | California Wines           | 2022-05-05 | 2022-05-10 | USA                | VAN2222         |
+|      4 | Beaches Galore             | 2022-04-04 | 2022-04-14 | Bermuda            | TAXI222         |
+|      5 | Cottage Country            | 2022-06-01 | 2022-06-22 | Canada             | CAND123         |
+|      6 | Arrivaderci Roma           | 2022-07-05 | 2022-07-15 | Italy              | TAXI111         |
+|      7 | Shetland and Orkney        | 2022-09-09 | 2022-09-29 | UK                 | TAXI111         |
+|      8 | Disney World and Sea World | 2022-06-10 | 2022-06-20 | USA                | VAN2222         |
+|      9 | Punta Cana                 | 2022-05-01 | 2022-05-15 | Dominican Republic | VAN2222         |
+|     10 | Middlesex College Room 110 | 2021-09-13 | 2022-12-12 | Canada             | VAN2222         |
++--------+----------------------------+------------+------------+--------------------+-----------------+
+10 rows in set (0.00 sec)
+
+--------------
+UPDATE bustrips SET licenseplatenum = "VAN1111" WHERE country = "USA"
+--------------
+
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+--------------
+SELECT * FROM bustrips
+--------------
+
++--------+----------------------------+------------+------------+--------------------+-----------------+
+| tripid | tripname                   | startdate  | enddate    | country            | licenseplatenum |
++--------+----------------------------+------------+------------+--------------------+-----------------+
+|      1 | Castles of Germany         | 2022-01-01 | 2022-01-17 | Germany            | VAN1111         |
+|      2 | Tuscany Sunsets            | 2022-03-03 | 2022-03-14 | Italy              | TAXI222         |
+|      3 | California Wines           | 2022-05-05 | 2022-05-10 | USA                | VAN1111         |
+|      4 | Beaches Galore             | 2022-04-04 | 2022-04-14 | Bermuda            | TAXI222         |
+|      5 | Cottage Country            | 2022-06-01 | 2022-06-22 | Canada             | CAND123         |
+|      6 | Arrivaderci Roma           | 2022-07-05 | 2022-07-15 | Italy              | TAXI111         |
+|      7 | Shetland and Orkney        | 2022-09-09 | 2022-09-29 | UK                 | TAXI111         |
+|      8 | Disney World and Sea World | 2022-06-10 | 2022-06-20 | USA                | VAN1111         |
+|      9 | Punta Cana                 | 2022-05-01 | 2022-05-15 | Dominican Republic | VAN2222         |
+|     10 | Middlesex College Room 110 | 2021-09-13 | 2022-12-12 | Canada             | VAN2222         |
++--------+----------------------------+------------+------------+--------------------+-----------------+
+10 rows in set (0.00 sec)
+
+Bye

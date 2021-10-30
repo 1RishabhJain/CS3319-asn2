@@ -1,0 +1,259 @@
+Warning: Using a password on the command line interface can be insecure.
+--------------
+SELECT tripname FROM bustrips WHERE country = "Italy"
+--------------
+
++------------------+
+| tripname         |
++------------------+
+| Tuscany Sunsets  |
+| Arrivaderci Roma |
++------------------+
+2 rows in set (0.00 sec)
+
+--------------
+SELECT DISTINCT lastname FROM passengers
+--------------
+
++----------+
+| lastname |
++----------+
+| Simpson  |
+| Flanders |
+| Klum     |
+| Scott    |
+| Schrute  |
+| Beesly   |
+| Bratton  |
+| Peralta  |
++----------+
+8 rows in set (0.00 sec)
+
+--------------
+SELECT * FROM bustrips ORDER BY tripname
+--------------
+
++--------+----------------------------+------------+------------+--------------------+-----------------+
+| tripid | tripname                   | startdate  | enddate    | country            | licenseplatenum |
++--------+----------------------------+------------+------------+--------------------+-----------------+
+|      6 | Arrivaderci Roma           | 2022-07-05 | 2022-07-15 | Italy              | TAXI111         |
+|      4 | Beaches Galore             | 2022-04-04 | 2022-04-14 | Bermuda            | TAXI222         |
+|      3 | California Wines           | 2022-05-05 | 2022-05-10 | USA                | VAN1111         |
+|      1 | Castles of Germany         | 2022-01-01 | 2022-01-17 | Germany            | VAN1111         |
+|      5 | Cottage Country            | 2022-06-01 | 2022-06-22 | Canada             | CAND123         |
+|      8 | Disney World and Sea World | 2022-06-10 | 2022-06-20 | USA                | VAN1111         |
+|     10 | Middlesex College Room 110 | 2021-09-13 | 2022-12-12 | Canada             | VAN2222         |
+|      9 | Punta Cana                 | 2022-05-01 | 2022-05-15 | Dominican Republic | VAN2222         |
+|      7 | Shetland and Orkney        | 2022-09-09 | 2022-09-29 | UK                 | TAXI111         |
+|      2 | Tuscany Sunsets            | 2022-03-03 | 2022-03-14 | Italy              | TAXI222         |
++--------+----------------------------+------------+------------+--------------------+-----------------+
+10 rows in set (0.00 sec)
+
+--------------
+SELECT tripname, country, startdate FROM bustrips WHERE startdate > "2022/04/30"
+--------------
+
++----------------------------+--------------------+------------+
+| tripname                   | country            | startdate  |
++----------------------------+--------------------+------------+
+| California Wines           | USA                | 2022-05-05 |
+| Cottage Country            | Canada             | 2022-06-01 |
+| Arrivaderci Roma           | Italy              | 2022-07-05 |
+| Shetland and Orkney        | UK                 | 2022-09-09 |
+| Disney World and Sea World | USA                | 2022-06-10 |
+| Punta Cana                 | Dominican Republic | 2022-05-01 |
++----------------------------+--------------------+------------+
+6 rows in set (0.00 sec)
+
+--------------
+SELECT firstname, lastname, birthdate FROM passports, passengers WHERE passengers.passengerid = passports.passengerid AND passports.countryofcitizenship = "USA"
+--------------
+
++-----------+----------+------------+
+| firstname | lastname | birthdate  |
++-----------+----------+------------+
+| Homer     | Simpson  | 1970-02-19 |
+| Marge     | Simpson  | 1972-08-12 |
+| Bart      | Simpson  | 2001-05-12 |
+| Lisa      | Simpson  | 2004-03-19 |
+| Maggie    | Simpson  | 2012-09-17 |
+| Ned       | Flanders | 1950-06-11 |
+| Todd      | Flanders | 1940-06-24 |
+| Jake      | Peralta  | 1978-09-18 |
++-----------+----------+------------+
+8 rows in set (0.00 sec)
+
+--------------
+SELECT tripname, capacity FROM bustrips JOIN buses ON buses.licenseplatenum = bustrips.licenseplatenum JOIN bookings ON bustrips.tripid = bookings.tripid WHERE startdate > "2022/04/1" AND startdate < "2022/09/1"
+--------------
+
++----------------------------+----------+
+| tripname                   | capacity |
++----------------------------+----------+
+| Arrivaderci Roma           |        4 |
+| Arrivaderci Roma           |        4 |
+| Arrivaderci Roma           |        4 |
+| Arrivaderci Roma           |        4 |
+| Arrivaderci Roma           |        4 |
+| Beaches Galore             |        3 |
+| Beaches Galore             |        3 |
+| Disney World and Sea World |       10 |
+| Disney World and Sea World |       10 |
+| Disney World and Sea World |       10 |
+| Disney World and Sea World |       10 |
++----------------------------+----------+
+11 rows in set (0.00 sec)
+
+--------------
+SELECT * FROM passengers JOIN passports ON passports.passengerid = passengers.passengerid WHERE expirydate < ADDDATE(CURDATE(), INTERVAL 1 YEAR)
+--------------
+
++-------------+-----------+----------+----------------+----------------------+------------+------------+-------------+
+| passengerid | firstname | lastname | passportnumber | countryofcitizenship | expirydate | birthdate  | passengerid |
++-------------+-----------+----------+----------------+----------------------+------------+------------+-------------+
+|          45 | Todd      | Flanders | US23           | USA                  | 2018-03-03 | 1940-06-24 |          45 |
+|          78 | Dwight    | Schrute  | US89           | Germany              | 2022-02-02 | 1976-04-08 |          78 |
+|          79 | Pam       | Beesly   | US90           | Italy                | 2020-02-28 | 1980-04-04 |          79 |
++-------------+-----------+----------+----------------+----------------------+------------+------------+-------------+
+3 rows in set (0.00 sec)
+
+--------------
+SELECT firstname, lastname, tripname FROM bookings JOIN bustrips ON bookings.tripid = bustrips.tripid JOIN passengers ON bookings.passengerid = passengers.passengerid WHERE passengers.lastname LIKE "S%"
+--------------
+
++-----------+----------+----------------------------+
+| firstname | lastname | tripname                   |
++-----------+----------+----------------------------+
+| Homer     | Simpson  | Castles of Germany         |
+| Marge     | Simpson  | Castles of Germany         |
+| Bart      | Simpson  | Castles of Germany         |
+| Lisa      | Simpson  | Castles of Germany         |
+| Maggie    | Simpson  | Castles of Germany         |
+| Dwight    | Schrute  | Castles of Germany         |
+| Dwight    | Schrute  | Beaches Galore             |
+| Homer     | Simpson  | Arrivaderci Roma           |
+| Marge     | Simpson  | Arrivaderci Roma           |
+| Bart      | Simpson  | Arrivaderci Roma           |
+| Lisa      | Simpson  | Arrivaderci Roma           |
+| Maggie    | Simpson  | Arrivaderci Roma           |
+| Homer     | Simpson  | Shetland and Orkney        |
+| Michael   | Scott    | Shetland and Orkney        |
+| Bart      | Simpson  | Disney World and Sea World |
+| Lisa      | Simpson  | Disney World and Sea World |
++-----------+----------+----------------------------+
+16 rows in set (0.00 sec)
+
+--------------
+SELECT COUNT(*), tripname, bustrips.tripid FROM bookings JOIN bustrips ON bookings.tripid = bustrips.tripid WHERE bustrips.tripname = "Castles of Germany"
+--------------
+
++----------+--------------------+--------+
+| COUNT(*) | tripname           | tripid |
++----------+--------------------+--------+
+|        7 | Castles of Germany |      1 |
++----------+--------------------+--------+
+1 row in set (0.00 sec)
+
+--------------
+SELECT country, SUM(tripprice) FROM bustrips JOIN bookings ON bustrips.tripid = bookings.tripid GROUP BY tripname
+--------------
+
++---------+----------------+
+| country | SUM(tripprice) |
++---------+----------------+
+| Italy   |        1500.00 |
+| Bermuda |        1200.00 |
+| Germany |        2750.99 |
+| USA     |        1200.00 |
+| Canada  |        7306.60 |
+| UK      |        1200.00 |
++---------+----------------+
+6 rows in set (0.00 sec)
+
+--------------
+SELECT firstname, lastname, countryofcitizenship, tripname, country FROM bustrips JOIN bookings ON bustrips.tripid = bookings.tripid JOIN passengers ON bookings.passengerid = passengers.passengerid JOIN passports ON passengers.passengerid = passports.passengerid WHERE countryofcitizenship != country
+--------------
+
++-----------+----------+----------------------+----------------------------+---------+
+| firstname | lastname | countryofcitizenship | tripname                   | country |
++-----------+----------+----------------------+----------------------------+---------+
+| Homer     | Simpson  | USA                  | Castles of Germany         | Germany |
+| Marge     | Simpson  | USA                  | Castles of Germany         | Germany |
+| Bart      | Simpson  | USA                  | Castles of Germany         | Germany |
+| Lisa      | Simpson  | USA                  | Castles of Germany         | Germany |
+| Maggie    | Simpson  | USA                  | Castles of Germany         | Germany |
+| Dwight    | Schrute  | Germany              | Beaches Galore             | Bermuda |
+| Creed     | Bratton  | Germany              | Beaches Galore             | Bermuda |
+| Homer     | Simpson  | USA                  | Arrivaderci Roma           | Italy   |
+| Marge     | Simpson  | USA                  | Arrivaderci Roma           | Italy   |
+| Bart      | Simpson  | USA                  | Arrivaderci Roma           | Italy   |
+| Lisa      | Simpson  | USA                  | Arrivaderci Roma           | Italy   |
+| Maggie    | Simpson  | USA                  | Arrivaderci Roma           | Italy   |
+| Homer     | Simpson  | USA                  | Shetland and Orkney        | UK      |
+| Ned       | Flanders | USA                  | Shetland and Orkney        | UK      |
+| Michael   | Scott    | Canada               | Shetland and Orkney        | UK      |
+| Jake      | Peralta  | USA                  | Middlesex College Room 110 | Canada  |
++-----------+----------+----------------------+----------------------------+---------+
+16 rows in set (0.00 sec)
+
+--------------
+SELECT bustrips.tripid, tripname FROM bustrips WHERE bustrips.tripid NOT IN (SELECT bookings.tripid FROM bookings)
+--------------
+
++--------+------------------+
+| tripid | tripname         |
++--------+------------------+
+|      2 | Tuscany Sunsets  |
+|      3 | California Wines |
+|      5 | Cottage Country  |
+|      9 | Punta Cana       |
++--------+------------------+
+4 rows in set (0.00 sec)
+
+--------------
+CREATE VIEW passengerpayment AS SELECT firstname, lastname, countryofcitizenship, SUM(tripprice) AS payment FROM passengers JOIN bookings ON passengers.passengerid = bookings.passengerid JOIN passports ON passengers.passengerid = passports.passengerid GROUP BY firstname
+--------------
+
+Query OK, 0 rows affected (0.09 sec)
+
+--------------
+SELECT firstname, lastname, countryofcitizenship, payment FROM passengerpayment WHERE payment = (SELECT MAX(payment) FROM passengerpayment)
+--------------
+
++-----------+----------+----------------------+---------+
+| firstname | lastname | countryofcitizenship | payment |
++-----------+----------+----------------------+---------+
+| Jake      | Peralta  | USA                  | 7306.60 |
++-----------+----------+----------------------+---------+
+1 row in set (0.00 sec)
+
+--------------
+SELECT bustrips.tripname FROM bustrips JOIN bookings ON bustrips.tripid = bookings.tripid GROUP BY tripname HAVING COUNT(*) < 4 ORDER BY COUNT(*) DESC
+--------------
+
++----------------------------+
+| tripname                   |
++----------------------------+
+| Shetland and Orkney        |
+| Beaches Galore             |
+| Middlesex College Room 110 |
++----------------------------+
+3 rows in set (0.00 sec)
+
+--------------
+SELECT bustrips.tripname AS "Bus Trip Name", COUNT(*) AS "Current Number of Passengers", buses.capacity AS "Capacity of Assigned Bus", buses.licenseplatenum AS "Current Bus Assigned License Plate" FROM bustrips JOIN bookings ON bustrips.tripid = bookings.tripid JOIN buses ON buses.licenseplatenum = bustrips.licenseplatenum GROUP BY tripname ORDER BY COUNT(*) DESC
+--------------
+
++----------------------------+------------------------------+--------------------------+------------------------------------+
+| Bus Trip Name              | Current Number of Passengers | Capacity of Assigned Bus | Current Bus Assigned License Plate |
++----------------------------+------------------------------+--------------------------+------------------------------------+
+| Castles of Germany         |                            7 |                       10 | VAN1111                            |
+| Arrivaderci Roma           |                            5 |                        4 | TAXI111                            |
+| Disney World and Sea World |                            4 |                       10 | VAN1111                            |
+| Shetland and Orkney        |                            3 |                        4 | TAXI111                            |
+| Beaches Galore             |                            2 |                        3 | TAXI222                            |
+| Middlesex College Room 110 |                            1 |                       15 | VAN2222                            |
++----------------------------+------------------------------+--------------------------+------------------------------------+
+6 rows in set (0.00 sec)
+
+Bye
