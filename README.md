@@ -65,54 +65,58 @@ File 2 - Insertion and Modification
 o	NOTE: You will need to make a copy of the above data file in your assignment2 directory on your virtual machine. You cannot directly link to the above file. 
 •	Using the SQL INSERT statement, insert the following data also into the tables. NOTE: it doesn't matter if you insert the passengers first or the passports first BUT the way you did the foreign key will affect this. Because it was total participation between the two on both sides, you could put the passport key in the passenger table as a foreign key OR you might have put the passenger key in the passport table as a foreign key. Which ever way you choice will dictate the order you must insert into these 2 tables as you cant insert the foreign keys until you have created the associated primary keys. 
 o	Passengers:
-	11, Homer Simpson, US10
-	22, Marge Simpson, US12
-	33, Bart Simpson, US13
-	34, Lisa Simpson, US14
-	35, Maggie Simpson, US15
-	44, Ned Flanders, US22
-	45, Todd Flanders, US23
-	66, Heidi Klum, GE11
-	77, Michael Scott, US88
-	78, Dwight Schrute, US89
-	79, Pam Beesly, US90
-	80, Creed Bratton, US91
-	A character from your favourite TV Show
+   o	11, Homer Simpson, US10
+   o	22, Marge Simpson, US12
+   o	33, Bart Simpson, US13
+   o	34, Lisa Simpson, US14
+   o	35, Maggie Simpson, US15
+   o	44, Ned Flanders, US22
+   o	45, Todd Flanders, US23
+   o	66, Heidi Klum, GE11
+   o	77, Michael Scott, US88
+   o	78, Dwight Schrute, US89
+   o	79, Pam Beesly, US90
+   o	80, Creed Bratton, US91
+   o	A character from your favourite TV Show
+
 o	Passports:
-	US10, USA, 1/1/2025, 2/19/1970 
-	US12, USA, 1/1/2025, 8/12/1972
-	US13, USA, 1/1/2025, 5/12/2001
-	US14, USA, 1/1/2025, 3/19/2004
-	US15, USA, 1/1/2025, 9/17/2012
-	US22, USA, 4/4/2030, 6/11/1950
-	US23, USA, 3/3/2018, 6/24/1940
-	GE11, Germany, 1/1/2027, 7/12/1970
-	US88, Canada, 2/13/2030,4/25/1979
-	US89, Canada, 2/2/2022, 4/8/1976
-	US90, Italy, 2/28/2020, 4/4/1980
-	US91, Germany, 1/1/2030, 2/2/1959
-	A passport for the character from your favourite TV Show
+   o	US10, USA, 1/1/2025, 2/19/1970 
+   o	US12, USA, 1/1/2025, 8/12/1972
+   o	US13, USA, 1/1/2025, 5/12/2001
+   o	US14, USA, 1/1/2025, 3/19/2004
+   o	US15, USA, 1/1/2025, 9/17/2012
+   o	US22, USA, 4/4/2030, 6/11/1950
+   o	US23, USA, 3/3/2018, 6/24/1940
+   o	GE11, Germany, 1/1/2027, 7/12/1970
+   o	US88, Canada, 2/13/2030,4/25/1979
+   o	US89, Canada, 2/2/2022, 4/8/1976
+   o	US90, Italy, 2/28/2020, 4/4/1980
+   o	US91, Germany, 1/1/2030, 2/2/1959
+   o	A passport for the character from your favourite TV Show
+
 o	Bus Trips:
-	1, "Castles of Germany", 1/1/2022, 1/17/2022, Germany, VAN1111
-	2, "Tuscany Sunsets", 3/3/2022, 3/14/2022, Italy, TAXI222
-	3, "California Wines", 5/5/2022, 5/10/2022, USA, VAN2222
-	4, "Beaches Galore", 4/4/2022, 4/14/2022, Bermuda, TAXI222
-	5, "Cottage Country", 6/1/2022, 6/22/2022, Canada, CAND123
-	6, "Arrivaderci Roma", 7/5/2022, 7/15/2022, Italy, TAXI111
-	7, "Shetland and Orkney", 9/9/2022, 9/29/2022, UK, TAXI111
-	8. "Disney World and Sea World", 6/10/2022, 6/20/2022, USA, VAN2222
-	9, Make up your own dream trip
-	10, Make up your worst nightmare trip!
+   o	1, "Castles of Germany", 1/1/2022, 1/17/2022, Germany, VAN1111
+   o	2, "Tuscany Sunsets", 3/3/2022, 3/14/2022, Italy, TAXI222
+   o	3, "California Wines", 5/5/2022, 5/10/2022, USA, VAN2222
+   o	4, "Beaches Galore", 4/4/2022, 4/14/2022, Bermuda, TAXI222
+   o	5, "Cottage Country", 6/1/2022, 6/22/2022, Canada, CAND123
+   o	6, "Arrivaderci Roma", 7/5/2022, 7/15/2022, Italy, TAXI111
+   o	7, "Shetland and Orkney", 9/9/2022, 9/29/2022, UK, TAXI111
+   o	8. "Disney World and Sea World", 6/10/2022, 6/20/2022, USA, VAN2222
+   o	9, Make up your own dream trip
+   o	10, Make up your worst nightmare trip!
+ 
 o	Bookings:
-	All of the Simpson are going to do the Castles of Germany trip. The 2 adults paid 500 dollars each and 3 children paid 200 dollars each
-	Heidi Klum is also doing the Castles of Germany trip.  She paid 600.99 dollars.
-	Both of the Flanders are going to Disney World/Sea World.  Ned paid 400 dollars and Todd paid 200 dollars
-	Dwight and Creed are going Beaches Galore trip. They both paid 600 dollars.
-	Dwight is also doing the Castles of Germany trip. He paid 550 dollars
-	Bart and Lisa Simpson are going to Disney World and Sea World. They both paid 300 dollars.
-	All of the Simpsons are doing the Arrivaderci Roma trip. The parents paid 600 dollars and each of the kids paid 100 dollars.
-	Homer Simpson and Ned Flanders and Michael Scott are all doing the "Shetland Orkney" trip. Homer paid 300, Ned paid 400 and Michael paid 500 dollars
-	Have your made up TV character take your nightmare trip. You can decide on the cost (must be greater than 0)
+    o	All of the Simpson are going to do the Castles of Germany trip. The 2 adults paid 500 dollars each and 3 children paid 200 dollars each
+    o	Heidi Klum is also doing the Castles of Germany trip.  She paid 600.99 dollars.
+    o	Both of the Flanders are going to Disney World/Sea World.  Ned paid 400 dollars and Todd paid 200 dollars
+    o	Dwight and Creed are going Beaches Galore trip. They both paid 600 dollars.
+    o	Dwight is also doing the Castles of Germany trip. He paid 550 dollars
+    o	Bart and Lisa Simpson are going to Disney World and Sea World. They both paid 300 dollars.
+    o	All of the Simpsons are doing the Arrivaderci Roma trip. The parents paid 600 dollars and each of the kids paid 100 dollars.
+    o	Homer Simpson and Ned Flanders and Michael Scott are all doing the "Shetland Orkney" trip. Homer paid 300, Ned paid 400 and Michael paid 500 dollars
+    o	Have your made up TV character take your nightmare trip. You can decide on the cost (must be greater than 0)
+
  
 •	Make sure you remembered to show what was in the table before and after in each table to prove that your inserts worked.
 •	Using the SQL UPDATE command, update the data as follows (remember to show the table BEFORE and AFTER you do each of the updates below):
