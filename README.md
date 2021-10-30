@@ -66,9 +66,13 @@ o	NOTE: You will need to make a copy of the above data file in your assignment2 
 •	Using the SQL INSERT statement, insert the following data also into the tables. NOTE: it doesn't matter if you insert the passengers first or the passports first BUT the way you did the foreign key will affect this. Because it was total participation between the two on both sides, you could put the passport key in the passenger table as a foreign key OR you might have put the passenger key in the passport table as a foreign key. Which ever way you choice will dictate the order you must insert into these 2 tables as you cant insert the foreign keys until you have created the associated primary keys. 
 o	Passengers:
    o	11, Homer Simpson, US10
+   
    o	22, Marge Simpson, US12
+   
    o	33, Bart Simpson, US13
+   
    o	34, Lisa Simpson, US14
+   
    o	35, Maggie Simpson, US15
    o	44, Ned Flanders, US22
    o	45, Todd Flanders, US23
